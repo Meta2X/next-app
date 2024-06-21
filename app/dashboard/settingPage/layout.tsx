@@ -10,11 +10,12 @@
 type LayoutProps = {
   children: React.ReactNode;
 }
-// 默认根布局是服务端组件，且不能设置为客户端组件。
-export default function RootLayout({ children }: LayoutProps) {
+// 同层级 page 会作为 children 参数传入 layout
+export default function Layout({ children }: LayoutProps) {
   return (
-    <html>
-      <body>{ children }</body>
-    </html>
+    <>
+      <div>setting-layout</div>
+      <div>{children}</div>
+    </>
   );
 }
